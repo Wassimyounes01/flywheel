@@ -1,0 +1,24 @@
+{
+  "name": "flywheel",
+  "version": "1.0.0",
+  "description": "A tiny, dependency-free RL brain that learns which approach wins for each task type — and recommends the best next move.",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node lib/group-advantage.cjs && node examples/demo.cjs > /dev/null && echo ok",
+    "check": "node --check lib/flywheel.cjs && node --check lib/group-advantage.cjs && echo ok"
+  },
+  "keywords": [
+    "reinforcement-learning",
+    "multi-armed-bandit",
+    "grpo",
+    "policy-learning",
+    "self-improving",
+    "zero-dependencies"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
