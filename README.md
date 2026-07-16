@@ -73,6 +73,14 @@ node lib/flywheel.cjs policy build
 
 ---
 
+## See it run
+
+<p align="center">
+  <img src="assets/product.svg" alt="FLYWHEEL — product shot" width="100%">
+</p>
+
+---
+
 ## Repository layout
 
 ```
@@ -84,6 +92,19 @@ flywheel/
 │   └── demo.cjs             ← reward a few actions, watch recommend() shift
 └── data/                    ← policy + observation log (gitignored, auto-created)
 ```
+
+---
+
+## Concepts
+
+| Concept | Meaning |
+|---|---|
+| **Grounded reward** | A 0-1 outcome you record after real work — a passed test, a conversion, a shipped artifact. No simulated scores. |
+| **Policy score** | Per (task type, action): win-rate·0.6 + avg-reward·0.4 + an exploration bonus, decayed over time. |
+| **Win rate** | How often an action beat the alternatives for this task type — the strongest exploit signal. |
+| **Staleness decay** | Old rewards fade, so the policy tracks what wins now, not what won last quarter. |
+| **Exploit vs explore** | The recommendation usually exploits the leader but keeps probing underdogs enough to notice regime change. |
+| **Group advantage (GRPO)** | Critic-free normalization Â = (R−μ)/σ over K variants of one task — relative quality without training a critic. |
 
 ---
 
